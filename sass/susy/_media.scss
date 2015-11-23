@@ -9,13 +9,13 @@
 ) {
   // store default $total-columns setting for later, then change it.
   $default-layout   : $total-columns;
-  $total-columns    : $layout-cols;
+  $total-columns    : $layout-cols !global;
 
   // apply children in this new layout context.
   @content;
 
   // return to default $total-columns setting.
-  $total-columns    : $default-layout;
+  $total-columns    : $default-layout !global;
 }
 
 // Nest a block of code inside a new media-query and layout context.
